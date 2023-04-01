@@ -1,6 +1,6 @@
 # linux_commands
 
-ls 
+* ls 
 
 Ex:
 ```bash
@@ -8,7 +8,7 @@ ls
 ```
 
 
-cat
+* cat
 
 Ex: 
 
