@@ -33,5 +33,18 @@ tail -100f README.txt
 tail -10f README.txt 
 ```
 
+cd
+
+Ex
+```bash
+cd helloworld
+```
+
+touch
+
+```bash
+touch README.md
+touch sample.txt
+```
 
 
