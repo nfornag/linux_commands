@@ -91,3 +91,12 @@ Host demoec201
     TCPKeepAlive           yes
 nag@ce-book ~/.ssh/configs $ 
 ```
+
+
+find
+
+find a file which name sample.txt
+
+```bash
+find ./ -name sample.txt
+```
