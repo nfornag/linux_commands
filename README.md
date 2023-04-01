@@ -52,3 +52,8 @@ ssh
 ssh -i demo-ec2-01.pem ubuntu@10.7.1.87
 ```
 
+scp 
+
+```bash
+scp -r eks-vpc/ root@10.7.1.87:/opt
+```
