@@ -57,3 +57,37 @@ scp
 ```bash
 scp -r eks-vpc/ root@10.7.1.87:/opt
 ```
+```bash
+ag@ce-book ~/.ssh $ pwd
+/home/nag/.ssh
+nag@ce-book ~/.ssh $ more config
+Include configs/*
+
+Host white-jh
+    User                   ubuntu 
+    HostName               54.236.231.92
+    Port                   22
+    IdentitiesOnly         yes
+    IdentityFile           ~/.ssh/id_rsa
+    UserKnownHostsFile     /dev/null
+    StrictHostKeyChecking  no
+    PasswordAuthentication no
+    TCPKeepAlive           yes
+    
+nag@ce-book ~/.ssh $ cd configs/
+nag@ce-book ~/.ssh/configs $ ls -ltr
+nag@ce-book ~/.ssh/configs $ more ce-white-config 
+
+Host demoec201
+    User                   ubuntu
+    HostName               10.7.1.52
+    ProxyJump              white-jh
+    Port                   22
+    IdentitiesOnly         yes
+    IdentityFile           /home/nag/Downloads/demo-ec2-key.pem
+    UserKnownHostsFile     /dev/null
+    StrictHostKeyChecking  no
+    PasswordAuthentication no
+    TCPKeepAlive           yes
+nag@ce-book ~/.ssh/configs $ 
+```
