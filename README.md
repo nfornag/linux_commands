@@ -37,48 +37,7 @@ touch README.md
 touch sample.txt
 
 ```
-ssh 
-```bash
-ssh -i demo-ec2-01.pem ubuntu@10.7.1.87
-```
-scp 
-```bash
-scp -r eks-vpc/ root@10.7.1.87:/opt
-```
-```bash
-ag@ce-book ~/.ssh $ pwd
-/home/nag/.ssh
-nag@ce-book ~/.ssh $ more config
-Include configs/*
 
-Host white-jh
-    User                   ubuntu 
-    HostName               54.236.231.92
-    Port                   22
-    IdentitiesOnly         yes
-    IdentityFile           ~/.ssh/id_rsa
-    UserKnownHostsFile     /dev/null
-    StrictHostKeyChecking  no
-    PasswordAuthentication no
-    TCPKeepAlive           yes
-    
-nag@ce-book ~/.ssh $ cd configs/
-nag@ce-book ~/.ssh/configs $ ls -ltr
-nag@ce-book ~/.ssh/configs $ more ce-white-config 
-
-Host demoec201
-    User                   ubuntu
-    HostName               10.7.1.52
-    ProxyJump              white-jh
-    Port                   22
-    IdentitiesOnly         yes
-    IdentityFile           /home/nag/Downloads/demo-ec2-key.pem
-    UserKnownHostsFile     /dev/null
-    StrictHostKeyChecking  no
-    PasswordAuthentication no
-    TCPKeepAlive           yes
-nag@ce-book ~/.ssh/configs $ 
-```
 find
 
 find a file which name sample.txt
@@ -109,7 +68,7 @@ find ./ -name sample.txt
 
 <details>
 <summary>Example Commands</summary>
-    
+    <br/> 
     
 Export AWS credentials in Terminal
 ```bash
@@ -150,30 +109,21 @@ aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
 <details>
 <summary>Docker Commands</summary>
  <br/>
+ 
 ```bash
 docker images
-```
-```bash
 docker pull nginx
-    ```
-    ```bash
 docker images
-    ```
-    ```bash
 docker run --name docker-nginx -p 80:80 nginx
-    ```
 docker run --name docker-nginx -p 80:80 -d nginx
 docker ps -a 
 docker rm 15748c592407 22f7a8be6d72 7a31e0f8f07a 9cefe4632514
 docker run --name docker-nginx -p 80:80 -d nginx
 docker ps -a
 docker run --name test-nginx -p 8000:80 -d nginx
-docker ps
 docker run --name dev-nginx -p 8001:80 -d nginx
-docker ps
 docker run --name prod-nginx -p 8005:80 -d nginx
-docker ps
-docker exec -it mydevapp /bin/bash
+docker exec -it test-nginx /bin/bash
 docker images 
 docker ps 
 docker ps -a
