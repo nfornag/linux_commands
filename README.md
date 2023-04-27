@@ -127,10 +127,11 @@ aws s3 cp --recursive logs s3://raju-us-east-1-demos3
 ## Docker
 
 <details>
-<summary>Docker Commands</summary>
+<summary>Example Commands</summary>
  <br/>
  
 ```bash
+# Manage docker images and Containers
 docker images
 docker pull nginx
 docker images
@@ -154,12 +155,29 @@ docker images
 docker rmi 806f89a70ff8 263083118061 080ed0ed8312 e499797894d5
 docker run hello-world
 ```
-</details>
-<details>
-<summary>Docker Swarm Commands</summary>
-<br/>
-</details>
+    
+#### Create Docker swarm cluster in master node
 
+```bash
+docker swarm init
+```
+
+#### Join worker nodes to Docker swarm cluster
+
+```bash
+docker swarm join --token SWMTKN-1-2hyn8v3qytkz23vlsd9or92n9843ugyjy45qhqoknmibj9599c-bo27ga0u57qql3jijku4i5m09 10.7.2.102:2377
+```
+
+#### Create and manage services in Docker swarm clouster
+
+```bash
+docker node ls
+docker service create   --name blue-service   --publish published=8081,target=8080  --replicas 6 ynraju4/srv-blue:6
+docker ps
+docker service rm green-service
+docker ps
+docker service scale green-service=4
+```
 
 ## Ansible
 
