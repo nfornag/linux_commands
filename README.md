@@ -2,18 +2,15 @@
 
 ## Linux Practice
 <details>
-<summary>File Management</summary>
+<summary> File Management</summary>
     <br/>
     
+Read/Write files and folders
+
 ```bash
 ls
 ls -ltr
 ll
-cat README.txt 
-more README.txt 
-tail -f README.txt
-tail -100f README.txt
-tail -10f README.txt
 mkdir helloworld
 cd helloworld
 touch README.md
@@ -21,34 +18,74 @@ touch sample.txt
 vi sample.txt
 ```
 
-find - find a file which name sample.txt
+**Read content of files**
+
+```bash
+cat README.txt 
+more README.txt 
+tail -f README.txt
+tail -100f README.txt
+tail -10f README.txt
+```
+**Copy fiels and directories**
+
+```bash
+# Copy a file to other directory
+cp sample.txt Documents
+# Copy a directory to other directory
+cp -r logs Documents
+```
+**Crate a copy of fiels and directories**
+
+```bash
+# Create a copy of file
+cp sample.txt sample_v2.txt
+# Create a copy of directory
+cp -r logs logs_bkp
+```
+**Move files and directories to other location**
+```bash
+# Move a fileto other location
+mv sample.txt Documents
+# Move a directory to other location
+mv logs Documents
+```
+
+**Rename fiels and directories**
+
+```bash
+# Rename a file
+mv sample.txt important.txt
+# Rename a directory
+mv -r logs logs_bkp
+```
+**Find a file**
 
 ```bash
 find ./ -name sample.txt
+locate sample.txt
 ```
-Compress old files
+**Compress the files that were genereated before 01-March-2023**
 
 ```bash
-# Compress the files that were genereated before 01-March-2023
 touch -t 202303010000 /tmp/2023-Mar-01-0000
 find /var/log/nginx -type f ! -newer /tmp/2023-Mar-01-0000 | xargs gzip
 ```
-Delete old files
+**Remove files that were genereated before 01-Jan-2023**
 
 ```bash
-# Remove files that were genereated before 01-Jan-2023
 touch -t 202301010000 /tmp/2023-Jan-01-0000
 find /var/log/nginx -type f ! -newer /tmp/2023-Jan-01-0000 | xargs rm
 ```
-Move old files to another directory
+**Move 7 days old files to another directory**
 ```bash
 find /var/log/nginx/ -mtime +7 -name "*.log" -exec mv "{}" /var/log/nginx_backup/ \;',
 ```
-Compress old files
+**Compress 7 days old files**
 ```bash
 find /var/log/nginx/ -mtime +7 -name "*.log" -exec gzip "{}" \;',
 ```
-Delete old files
+**Delete 7 days old files**
 ```bash
 find /var/log/nginx/ -mtime +7 -name "*.log" -exec rm "{}" \;',
 ```
@@ -59,12 +96,19 @@ find /var/log/nginx/ -mtime +7 -name "*.log" -exec rm "{}" \;',
 <details>
 <summary>User Management</summary>
     <br/> 
-Create user with home directory
+    
+**Create Linux User with home directory**
 
 ```bash
 sudo useradd -s /bin/bash -d /home/nag -m nag
 ```
-Enable root user password login
+**Set password for nag**
+
+```bash
+sudo passwd nag
+```
+
+**Enable root user password login**
 ```bash
 #!/bin/bash
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -84,7 +128,7 @@ echo 'root:mankdhur567Q' | chpasswd
 <summary>Configuration Management</summary>
  <br/>
  
-Configure Hostname
+**Configure Hostname**
 ```bash
 #!/bin/bash
 sudo hostnamectl set-hostname myappserver01 --static
@@ -102,45 +146,45 @@ sudo systemctl reboot
 <summary>CLI Commands</summary>
     <br/> 
     
-Export AWS credentials in Terminal
+**Export AWS credentials in command line**
 ```bash
 export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 export AWS_DEFAULT_REGION=us-east-1
 ```
 
-Describe EC2 Instances
+ **Describe EC2 Instances**
 ```bash
 aws ec2 describe-instances
 ```
-List S3 Buckets
+**List S3 Buckets**
 ```bash
 aws s3 ls
 ```
-Create an S3 Bucket
+**Create an S3 Bucket**
 
 ```bash
 aws s3api create-bucket --bucket test-bucket-948489282 --region us-east-1
 ```
-Delete an S3 Bucket
+**Delete an S3 Bucket**
 ```bash
 aws s3api delete-bucket --bucket test-bucket-948489282 --region us-east-1
 ```
-Create an EC2 Instance
+**Create an EC2 Instance**
 ```bash
 aws ec2 run-instances --image-id ami-007855ac798b5175e --count 1 --instance-type t2.micro --key-name test-ec2 
 ```
-Delete an EC2 Instance
+**Delete an EC2 Instance**
 ```bash
 aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
 ```
-Copy files to s3 bucket
+**Copy files to s3 bucket**
 
 ```bash   
 aws s3 cp nginx.log s3://raju-us-east-1-demos3/ec2data/
 aws s3 cp nginx.log s3://raju-us-east-1-demos3
 ```
-Copy folders to s3 bucket
+**Copy folders to s3 bucket**
 
 ```bash   
 aws s3 cp --recursive logs s3://raju-us-east-1-demos3
@@ -153,7 +197,7 @@ aws s3 cp --recursive logs s3://raju-us-east-1-demos3
 <summary>CLI Commands</summary>
  <br/>
  
-#### Manager Docker Images and Containers
+**Manager Docker Images and Containers**
  
 ```bash
 docker images
@@ -178,19 +222,19 @@ docker run hello-world
 docker logs hello-world 
 ```
     
-#### Create Docker swarm cluster in master node
+**Create Docker swarm cluster in master node**
 
 ```bash
 docker swarm init
 ```
 
-#### Join worker nodes to Docker swarm cluster
+**Join worker nodes to Docker swarm cluster**
 
 ```bash
 docker swarm join --token SWMTKN-1-2hyn8v3qytkz23vlsd9or92n9843ugyjy45qhqoknmibj9599c-bo27ga0u57qql3jijku4i5m09 10.7.2.102:2377
 ```
 
-#### Create and manage services in Docker swarm clouster
+**Create and manage services in Docker swarm cluster**
 
 ```bash
 docker node ls
@@ -208,10 +252,9 @@ docker service scale green-service=4
 <summary>CLI Commands</summary>
  <br/>
     
-Encrypt files with ansible-vault
+**Encrypt files with ansible-vault**
 ```bash    
 ansible-vault encrypt --vault-password-file $HOME/.secrets/vault_id dev-sales-ssh.pem
 ansible-vault decrypt --vault-password-file $HOME/.secrets/vault_id dev-sales-ssh.pem
 ```  
-    
 </details>
