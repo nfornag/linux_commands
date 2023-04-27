@@ -5,46 +5,55 @@
 <summary>File Management</summary>
     <br/>
     
-ls - list files and folder
-    
 ```bash
 ls
-```
-cat - describe content of file
-    
-```bash
+ls -ltr
+ll
 cat README.txt 
-```
-more - describe content of file
-    
-```bash
 more README.txt 
-```
-tail 
-```bash
 tail -f README.txt
 tail -100f README.txt
-tail -10f README.txt 
-```
-cd - change directory
-```bash
+tail -10f README.txt
+mkdir helloworld
 cd helloworld
-```
-
-touch - create an empty file
-```bash
 touch README.md
 touch sample.txt
-
+vi sample.txt
 ```
 
-find
-
-find a file which name sample.txt
+find - find a file which name sample.txt
 
 ```bash
 find ./ -name sample.txt
 ```
+Compress old files
+
+```bash
+# Compress the files that were genereated before 01-March-2023
+touch -t 202303010000 /tmp/2023-Mar-01-0000
+find /var/log/nginx -type f ! -newer /tmp/2023-Mar-01-0000 | xargs gzip
+```
+Delete old files
+
+```bash
+# Remove files that were genereated before 01-Jan-2023
+touch -t 202301010000 /tmp/2023-Jan-01-0000
+find /var/log/nginx -type f ! -newer /tmp/2023-Jan-01-0000 | xargs rm
+```
+Move old files to another directory
+```bash
+find /var/log/nginx/ -mtime +7 -name "*.log" -exec mv "{}" /var/log/nginx_backup/ \;',
+```
+Compress old files
+```bash
+find /var/log/nginx/ -mtime +7 -name "*.log" -exec gzip "{}" \;',
+```
+Delete old files
+```bash
+find /var/log/nginx/ -mtime +7 -name "*.log" -exec rm "{}" \;',
+```
+
+
 </details>
 
 <details>
