@@ -72,7 +72,7 @@ find /var/log/nginx/ -mtime +7 -name "*.log" -exec rm "{}" \;',
  <br/>
 </details>
 
-### [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) 
+## [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) 
 
 
 <details>
@@ -178,6 +178,7 @@ docker service rm green-service
 docker ps
 docker service scale green-service=4
 ```
+</details>
 
 ## Ansible
 
