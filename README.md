@@ -59,7 +59,20 @@ find /var/log/nginx/ -mtime +7 -name "*.log" -exec rm "{}" \;',
 <details>
 <summary>User Management</summary>
     <br/> 
-    
+Create user with home directory
+
+```bash
+sudo useradd -s /bin/bash -d /home/nag -m nag
+```
+Enable root user password login
+```bash
+#!/bin/bash
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sudo service sshd restart
+sudo sudo su -
+echo 'root:mankdhur567Q' | chpasswd
+```
 </details>
 
 <details>
@@ -70,6 +83,16 @@ find /var/log/nginx/ -mtime +7 -name "*.log" -exec rm "{}" \;',
 <details>
 <summary>Configuration Management</summary>
  <br/>
+ 
+Configure Hostname
+```bash
+#!/bin/bash
+sudo hostnamectl set-hostname myappserver01 --static
+sudo hostnamectl set-hostname myappserver01 --transient
+sudo echo -e "preserve_hostname: true" >> /etc/cloud/cloud.cfg
+sudo systemctl reboot
+``` 
+
 </details>
 
 ## [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) 
