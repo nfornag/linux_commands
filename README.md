@@ -5,8 +5,7 @@
 <summary> File Management</summary>
     <br/>
     
-Read/Write files and folders
-
+**Read/Write files and folders**
 ```bash
 ls
 ls -ltr
@@ -17,9 +16,7 @@ touch README.md
 touch sample.txt
 vi sample.txt
 ```
-
 **Read content of files**
-
 ```bash
 cat README.txt 
 more README.txt 
@@ -28,7 +25,6 @@ tail -100f README.txt
 tail -10f README.txt
 ```
 **Copy fiels and directories**
-
 ```bash
 # Copy a file to other directory
 cp sample.txt Documents
@@ -36,7 +32,6 @@ cp sample.txt Documents
 cp -r logs Documents
 ```
 **Crate a copy of fiels and directories**
-
 ```bash
 # Create a copy of file
 cp sample.txt sample_v2.txt
@@ -50,32 +45,29 @@ mv sample.txt Documents
 # Move a directory to other location
 mv logs Documents
 ```
-
 **Rename fiels and directories**
-
 ```bash
 # Rename a file
 mv sample.txt important.txt
 # Rename a directory
-mv -r logs logs_bkp
+mv logs logs_bkp
 ```
 **Find a file**
-
 ```bash
 find ./ -name sample.txt
 locate sample.txt
 ```
-**Compress the files that were genereated before 01-March-2023**
-
+**List of file names containing a given text**
 ```bash
-touch -t 202303010000 /tmp/2023-Mar-01-0000
-find /var/log/nginx -type f ! -newer /tmp/2023-Mar-01-0000 | xargs gzip
+find ./ -type f -exec grep -l "Apache License" {} \; 
 ```
-**Remove files that were genereated before 01-Jan-2023**
-
+**List the files older than 7 days**
 ```bash
-touch -t 202301010000 /tmp/2023-Jan-01-0000
-find /var/log/nginx -type f ! -newer /tmp/2023-Jan-01-0000 | xargs rm
+find /var/log/nginx -type f -mtime +7 -exec ls -ltr {} \;
+```
+**List the files older than 2 hours**
+```bash
+find /var/log/nginx -type f -mmin +120 -exec ls -ltr {} \;
 ```
 **Move 7 days old files to another directory**
 ```bash
@@ -89,8 +81,17 @@ find /var/log/nginx/ -mtime +7 -name "*.log" -exec gzip "{}" \;',
 ```bash
 find /var/log/nginx/ -mtime +7 -name "*.log" -exec rm "{}" \;',
 ```
+**Compress the files that were genereated before 01-March-2023**
 
-
+```bash
+touch -t 202303010000 /tmp/2023-Mar-01-0000
+find /var/log/nginx -type f ! -newer /tmp/2023-Mar-01-0000 | xargs gzip
+```
+**Remove files that were genereated before 01-Jan-2023**
+```bash
+touch -t 202301010000 /tmp/2023-Jan-01-0000
+find /var/log/nginx -type f ! -newer /tmp/2023-Jan-01-0000 | xargs rm
+```
 </details>
 
 <details>
