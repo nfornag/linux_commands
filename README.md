@@ -1,6 +1,6 @@
 
 
-## Linux Commads
+## Linux Practice
 <details>
 <summary>File Management</summary>
     <br/>
@@ -90,17 +90,19 @@ find ./ -name sample.txt
 
 <details>
 <summary>User Management</summary>
+    <br/> 
+    
 </details>
-  <br/>
+
 <details>
 <summary>Access Management</summary>
+     <br/>
 </details>
-  <br/>
+
 <details>
 <summary>Configuration Management</summary>
+ <br/>
 </details>
-  <br/>
-
 
 ### [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) 
 
@@ -143,13 +145,14 @@ aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
 ```
 </details>
 
-#Docker
+## Docker
 
 <details>
 <summary>Docker Commands</summary>
+      <br/>
 </details>
-  <br/>
 <details>
 <summary>Docker Swarm Commands</summary>
+      <br/>
 </details>
-  <br/>
+
