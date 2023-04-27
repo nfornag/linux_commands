@@ -99,7 +99,7 @@ sudo systemctl reboot
 
 
 <details>
-<summary>Example Commands</summary>
+<summary>CLI Commands</summary>
     <br/> 
     
 Export AWS credentials in Terminal
@@ -150,11 +150,12 @@ aws s3 cp --recursive logs s3://raju-us-east-1-demos3
 ## Docker
 
 <details>
-<summary>Example Commands</summary>
+<summary>CLI Commands</summary>
  <br/>
  
+#### Manager Docker Images and Containers
+ 
 ```bash
-# Manage docker images and Containers
 docker images
 docker pull nginx
 docker images
@@ -168,15 +169,13 @@ docker run --name test-nginx -p 8000:80 -d nginx
 docker run --name dev-nginx -p 8001:80 -d nginx
 docker run --name prod-nginx -p 8005:80 -d nginx
 docker exec -it test-nginx /bin/bash
-docker images 
-docker ps 
-docker ps -a
 docker stop docker-nginx test-nginx dev-nginx myapp mydevapp
 docker stop prod-nginx
 docker rm mydevapp myapp prod-nginx dev-nginx test-nginx docker-nginx
 docker images
 docker rmi 806f89a70ff8 263083118061 080ed0ed8312 e499797894d5
 docker run hello-world
+docker logs hello-world 
 ```
     
 #### Create Docker swarm cluster in master node
@@ -206,7 +205,7 @@ docker service scale green-service=4
 ## Ansible
 
 <details>
-<summary>Ansible Commands</summary>
+<summary>CLI Commands</summary>
  <br/>
     
 Encrypt files with ansible-vault
