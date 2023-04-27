@@ -1,47 +1,37 @@
-# linux_commands
 
-* ls 
 
-Ex:
+## Linux Commads
+<details>
+<summary>File Management</summary>
+    
+    
+ls - list files and folder
+    
 ```bash
 ls
 ```
-
-
-* cat
-
-Ex: 
-
+cat - describe content of file
+    
 ```bash
 cat README.txt 
 ```
-
-
-more 
-
-Ex: 
+more - describe content of file
+    
 ```bash
 more README.txt 
 ```
-
-tail:
-
-Ex: 
+tail 
 ```bash
 tail -f README.txt
 tail -100f README.txt
 tail -10f README.txt 
 ```
-
-cd
-
-Ex
+cd - change directory
 ```bash
 cd helloworld
 ```
 
-touch
-
+touch - create an empty file
 ```bash
 touch README.md
 touch sample.txt
@@ -51,9 +41,7 @@ ssh
 ```bash
 ssh -i demo-ec2-01.pem ubuntu@10.7.1.87
 ```
-
 scp 
-
 ```bash
 scp -r eks-vpc/ root@10.7.1.87:/opt
 ```
@@ -91,8 +79,6 @@ Host demoec201
     TCPKeepAlive           yes
 nag@ce-book ~/.ssh/configs $ 
 ```
-
-
 find
 
 find a file which name sample.txt
@@ -100,14 +86,36 @@ find a file which name sample.txt
 ```bash
 find ./ -name sample.txt
 ```
+</details>
 
-# Linux Commands
+<details>
+<summary>User Management</summary>
+</details>
+<details>
+<summary>Access Management</summary>
+</details>
 
-### awscli commands
+<details>
+<summary>Configuration Management</summary>
+</details>
 
-* [Export AWS credentials in Terminal](https://github.com/ynraju4/cka-concepts/blob/master/docs/Application-Lifecycle-Management.md)
+<details>
+<summary>Docker Commands</summary>
+</details>
+
+<details>
+<summary>Docker Swarm Commands</summary>
+</details>
 
 
+### [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) 
+
+
+<details>
+<summary>Example Commands</summary>
+    
+    
+Export AWS credentials in Terminal
 ```bash
 export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -131,7 +139,13 @@ Delete an S3 Bucket
 ```bash
 aws s3api delete-bucket --bucket test-bucket-948489282 --region us-east-1
 ```
-Create and EC2 Instance
+Create an EC2 Instance
 ```bash
-aws ec2 run-instances --image-id ami-0688ba7eeeeefe3cd --count 1 --instance-type t2.micro --key-name test-ec2 
+aws ec2 run-instances --image-id ami-007855ac798b5175e --count 1 --instance-type t2.micro --key-name test-ec2 
 ```
+Delete an EC2 Instance
+```bash
+aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
+```
+</details>
+
