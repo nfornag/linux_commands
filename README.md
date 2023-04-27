@@ -3,7 +3,7 @@
 ## Linux Commads
 <details>
 <summary>File Management</summary>
-    
+    <br/>
     
 ls - list files and folder
     
@@ -91,21 +91,15 @@ find ./ -name sample.txt
 <details>
 <summary>User Management</summary>
 </details>
+  <br/>
 <details>
 <summary>Access Management</summary>
 </details>
-
+  <br/>
 <details>
 <summary>Configuration Management</summary>
 </details>
-
-<details>
-<summary>Docker Commands</summary>
-</details>
-
-<details>
-<summary>Docker Swarm Commands</summary>
-</details>
+  <br/>
 
 
 ### [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) 
@@ -149,3 +143,13 @@ aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
 ```
 </details>
 
+#Docker
+
+<details>
+<summary>Docker Commands</summary>
+</details>
+  <br/>
+<details>
+<summary>Docker Swarm Commands</summary>
+</details>
+  <br/>
