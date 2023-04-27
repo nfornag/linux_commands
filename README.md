@@ -111,6 +111,17 @@ Delete an EC2 Instance
 ```bash
 aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
 ```
+Copy files to s3 bucket
+
+```bash   
+aws s3 cp nginx.log s3://raju-us-east-1-demos3/ec2data/
+aws s3 cp nginx.log s3://raju-us-east-1-demos3
+```
+Copy folders to s3 bucket
+
+```bash   
+aws s3 cp --recursive logs s3://raju-us-east-1-demos3
+```
 </details>
 
 ## Docker
@@ -149,3 +160,17 @@ docker run hello-world
 <br/>
 </details>
 
+
+## Ansible
+
+<details>
+<summary>Ansible Commands</summary>
+ <br/>
+    
+Encrypt files with ansible-vault
+```bash    
+ansible-vault encrypt --vault-password-file $HOME/.secrets/vault_id dev-sales-ssh.pem
+ansible-vault decrypt --vault-password-file $HOME/.secrets/vault_id dev-sales-ssh.pem
+```  
+    
+</details>
