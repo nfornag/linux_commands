@@ -149,47 +149,44 @@ aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
 
 <details>
 <summary>Docker Commands</summary>
-      <br/>
-    
- sudo su -
+ <br/>
+```bash
 docker images
+```
+```bash
 docker pull nginx
+    ```
+    ```bash
 docker images
-
+    ```
+    ```bash
 docker run --name docker-nginx -p 80:80 nginx
+    ```
 docker run --name docker-nginx -p 80:80 -d nginx
-   
- docker ps -a 
+docker ps -a 
 docker rm 15748c592407 22f7a8be6d72 7a31e0f8f07a 9cefe4632514
 docker run --name docker-nginx -p 80:80 -d nginx
 docker ps -a
- docker run --name test-nginx -p 8000:80 -d nginx
+docker run --name test-nginx -p 8000:80 -d nginx
 docker ps
 docker run --name dev-nginx -p 8001:80 -d nginx
 docker ps
 docker run --name prod-nginx -p 8005:80 -d nginx
 docker ps
-
-
 docker exec -it mydevapp /bin/bash
 docker images 
 docker ps 
 docker ps -a
 docker stop docker-nginx test-nginx dev-nginx myapp mydevapp
-
-   50  docker stop prod-nginx
-
-   53  docker rm mydevapp myapp prod-nginx dev-nginx test-nginx docker-nginx
-
-   56  docker images
-   57  docker rmi 806f89a70ff8 263083118061 080ed0ed8312 e499797894d5
-
-   60  docker run hello-world
-
-
+docker stop prod-nginx
+docker rm mydevapp myapp prod-nginx dev-nginx test-nginx docker-nginx
+docker images
+docker rmi 806f89a70ff8 263083118061 080ed0ed8312 e499797894d5
+docker run hello-world
+```
 </details>
 <details>
 <summary>Docker Swarm Commands</summary>
-      <br/>
+<br/>
 </details>
 
