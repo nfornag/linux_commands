@@ -195,7 +195,7 @@ aws s3 cp nginx.log s3://raju-us-east-1-demos3
 ```bash   
 aws s3 cp --recursive logs s3://raju-us-east-1-demos3
 ```
-:bulb:Refer [AWS Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) for more details
+:bulb: Refer [AWS Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) for more details
 </details>
 
 ## Docker
