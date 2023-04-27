@@ -100,3 +100,38 @@ find a file which name sample.txt
 ```bash
 find ./ -name sample.txt
 ```
+
+# Linux Commands
+
+### awscli commands
+
+* [Export AWS credentials in Terminal](https://github.com/ynraju4/cka-concepts/blob/master/docs/Application-Lifecycle-Management.md)
+
+
+```bash
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_DEFAULT_REGION=us-east-1
+```
+
+Describe EC2 Instances
+```bash
+aws ec2 describe-instances
+```
+List S3 Buckets
+```bash
+aws s3 ls
+```
+Create an S3 Bucket
+
+```bash
+aws s3api create-bucket --bucket test-bucket-948489282 --region us-east-1
+```
+Delete an S3 Bucket
+```bash
+aws s3api delete-bucket --bucket test-bucket-948489282 --region us-east-1
+```
+Create and EC2 Instance
+```bash
+aws ec2 run-instances --image-id ami-0688ba7eeeeefe3cd --count 1 --instance-type t2.micro --key-name test-ec2 
+```
