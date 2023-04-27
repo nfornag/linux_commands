@@ -108,6 +108,11 @@ sudo useradd -s /bin/bash -d /home/nag -m nag
 ```bash
 sudo passwd nag
 ```
+**Delete nag user**
+
+```bash
+sudo userdel nag
+```
 
 **Enable root user password login**
 ```bash
