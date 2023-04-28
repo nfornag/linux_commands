@@ -108,6 +108,11 @@ sudo useradd -s /bin/bash -d /home/nag -m nag
 ```bash
 sudo passwd nag
 ```
+**Delete nag user**
+
+```bash
+sudo userdel nag
+```
 
 **Enable root user password login**
 ```bash
@@ -123,12 +128,31 @@ echo 'root:mankdhur567Q' | chpasswd
 <details>
 <summary>Access Management</summary>
      <br/>
+ 
+**Connect to remote server**
+ 
+```bash 
+ssh -i "test-ec2.pem" ubuntu@ec2-18-208-248-114.compute-1.amazonaws.com
+```
 </details>
 
 <details>
 <summary>Configuration Management</summary>
  <br/>
  
+**Install Nginx Webserver and deploy Index.html**
+ 
+```bash 
+sudo apt update
+sudo apt upgrade -y
+sudo apt install nginx -y
+cd /var/www/html/
+touch index.html
+sudo vi index.html
+sudo systemctl restart nginx
+sudo systemctl status nginx
+```
+
 **Configure Hostname**
 ```bash
 #!/bin/bash
@@ -140,7 +164,7 @@ sudo systemctl reboot
 
 </details>
 
-## [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) 
+## AWS CLI
 
 
 <details>
@@ -190,6 +214,7 @@ aws s3 cp nginx.log s3://raju-us-east-1-demos3
 ```bash   
 aws s3 cp --recursive logs s3://raju-us-east-1-demos3
 ```
+:bulb: Refer [AWS Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) for more details
 </details>
 
 ## Docker
