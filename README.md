@@ -128,12 +128,31 @@ echo 'root:mankdhur567Q' | chpasswd
 <details>
 <summary>Access Management</summary>
      <br/>
+ 
+**Connect to remote server**
+ 
+```bash 
+ssh -i "test-ec2.pem" ubuntu@ec2-18-208-248-114.compute-1.amazonaws.com
+```
 </details>
 
 <details>
 <summary>Configuration Management</summary>
  <br/>
  
+**Install Nginx Webserver and deploy Index.html**
+ 
+```bash 
+sudo apt update
+sudo apt upgrade -y
+sudo apt install nginx -y
+cd /var/www/html/
+touch index.html
+sudo vi index.html
+sudo systemctl restart nginx
+sudo systemctl status nginx
+```
+
 **Configure Hostname**
 ```bash
 #!/bin/bash
