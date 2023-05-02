@@ -171,6 +171,13 @@ sudo systemctl reboot
 <summary>CLI Commands</summary>
     <br/> 
     
+**Store AWS credentials in command line**
+
+```bash
+aws configure
+```
+(or)
+    
 **Export AWS credentials in command line**
 ```bash
 export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
