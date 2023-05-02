@@ -305,7 +305,7 @@ ansible-playbook -i inventory install-docker.yaml --limit webserver01
  
 **Encrypt files with ansible-vault**
 ```bash    
-ansible-vault encrypt --vault-password-file $HOME/.secrets/vault_id dev-sales-ssh.pem
-ansible-vault decrypt --vault-password-file $HOME/.secrets/vault_id dev-sales-ssh.pem
+ansible-vault encrypt --vault-id $HOME/.secrets/vault_id dev-sales-ssh.pem
+ansible-vault decrypt --vault-id $HOME/.secrets/vault_id dev-sales-ssh.pem
 ```  
 </details>
