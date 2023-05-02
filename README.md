@@ -285,7 +285,24 @@ docker service scale green-service=4
 <details>
 <summary>CLI Commands</summary>
  <br/>
-    
+ 
+ **Validate SSH for all servers in one group**
+```bash    
+ansible -i inventory all -m ping
+```  
+ **Validate SSH for one server in one group**
+```bash    
+ansible -i inventory webservers -m ping --limit webserver01
+```  
+ **Run Ansible playbook for all servers in one group**
+```bash    
+ansible-playbook -i inventory install-docker.yaml
+```  
+ **Run Ansible playbook for one server in one group**
+```bash    
+ansible-playbook -i inventory install-docker.yaml --limit webserver01
+```  
+ 
 **Encrypt files with ansible-vault**
 ```bash    
 ansible-vault encrypt --vault-password-file $HOME/.secrets/vault_id dev-sales-ssh.pem
