@@ -212,7 +212,8 @@ aws ec2 terminate-instances --instance-ids i-394jd83kdujd83jdh7
 ```
 **Copy files to s3 bucket**
 
-```bash   
+```bash 
+aws s3api create-bucket --bucket raju-us-east-1-demos3 --region us-east-1
 aws s3 cp nginx.log s3://raju-us-east-1-demos3/ec2data/
 aws s3 cp nginx.log s3://raju-us-east-1-demos3
 ```
